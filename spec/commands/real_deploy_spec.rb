@@ -29,7 +29,7 @@ describe "Invoking the 'mina' command in a project", :ssh => true do
 
     print "[deploy 1]" if ENV['verbose']
     mina 'deploy', '--verbose'
-    stdout.should include "-----> Creating a temporary build path"
+    stdout.should include "Creating a temporary build path"
     stdout.should include "rm -rf .git"
     stdout.should include "mkdir -p"
     File.exists?('deploy/last_version').should be_true
