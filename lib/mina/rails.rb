@@ -162,7 +162,7 @@ namespace :rails do
   task :'db_migrate:force' do
     queue %{
       echo "-----> Migrating database"
-      #{echo_cmd %[#{rake} db:migrate]}
+      #{echo_cmd %[cd #{deploy_to}/#{current_path} && #{rake} db:migrate]}
     }
   end
 
